@@ -34,6 +34,42 @@ const router = createRouter({
       name: 'openWhen',
       component: () => import('../views/OpenWhen.vue')
     },
+    {
+      path: '/whispers',
+      name: 'whispers',
+      component: () => import('../views/DailyWhispers.vue')
+    },
+    {
+      path: '/polaroid',
+      name: 'polaroid',
+      component: () => import('../views/Polaroid.vue')
+    },
+    {
+      path: '/thoughts',
+      name: 'thoughts',
+      component: () => import('../views/Thoughts.vue')
+    },
+    {
+      path: '/memory-lane',
+      name: 'memoryLane',
+      component: () => import('../views/MemoryLane.vue')
+    },
+    {
+      path: '/mood',
+      name: 'mood',
+      component: () => import('../views/Mood.vue')
+    },
+    {
+      path: '/jar',
+      name: 'jar',
+      component: () => import('../views/Jar.vue')
+    },
+    {
+      path: '/vinyl',
+      name: 'vinyl',
+      component: () => import('../views/VinylPlayer.vue')
+    },
+    
   ]
 })
 

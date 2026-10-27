@@ -59,8 +59,8 @@
           <h1 class="mb-3">❤️</h1>
           <h4 class="custom-heading">Noted!</h4>
           <p class="text-muted">I'll be waiting for that day. <br> Take care.</p>
-          <button @click="goHome" class="btn btn-sm btn-light rounded-pill mt-3 px-4">
-            Close & Go Home
+          <button @click="goNext" class="btn btn-sm btn-light rounded-pill mt-3 px-4">
+            See My Whispers &rarr;
           </button>
         </div>
 
@@ -116,9 +116,9 @@ const handleAnswer = () => {
   quizAnswered.value = true
 }
 
-const goHome = () => {
+const goNext = () => {
   showModal.value = false
-  router.push('/welcome')
+  router.push('/whispers')
 }
 </script>
 
