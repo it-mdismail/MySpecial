@@ -180,6 +180,6 @@ export const songOfWeek = {
   title: "Perfect", // তোমার পছন্দের গানের নাম দিতে পারো
   artist: "Ed Sheeran", // শিল্পীর নাম
   cover: "https://images.unsplash.com/photo-1493225457124-a1a2a5956093?auto=format&fit=crop&w=500&q=80", // গানের কভার বা তোমার কোনো ছবি
-  audio: "/weekly-song.mp3", // গানটির অডিও ফাইল
+  audio: "/weekly-song.mpeg", // গানটির অডিও ফাইল
   note: "এই সপ্তাহের জন্য এই গানটা। যখনই মন খারাপ হবে, চোখ বন্ধ করে এটা শুনবে আর ভাববে আমি তোমার পাশেই আছি..."
 };

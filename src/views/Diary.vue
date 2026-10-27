@@ -22,7 +22,7 @@
 
           <div class="text-end mt-4 fade-in-slow" v-if="!isTyping">
             <p class="custom-handwriting sign-off mb-0">Yours,</p>
-            <p class="fw-bold text-dark">[তোমার নাম]</p>
+            <p class="fw-bold text-dark">Md Ismail Hossan (Lingkon)</p>
           </div>
 
         </div>
