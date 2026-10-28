@@ -13,8 +13,8 @@
         <!-- জোকস বা মজার চ্যাটের স্টিকি নোটগুলো -->
         <div 
           class="col-md-6 fade-in-up" 
-          v-for="(note, index) in funnyNotes" 
-          :key="index"
+          v-for="(note, index) in smileNotes" 
+          :key="smileNotes.id"
           :style="{ animationDelay: `${index * 0.2}s` }"
         >
           <div class="card h-100 border-0 shadow-sm sticky-note" :class="note.colorClass">
@@ -64,32 +64,11 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { smileNotes }from '../data/db.js'
 
 const router = useRouter()
 const showTwist = ref(false) // টুইস্ট দেখানোর স্টেট
 
-const funnyNotes = ref([
-  {
-    text: "মনে আছে সেদিন আমরা কীভাবে রেন্ডম টপিক নিয়ে ঘণ্টার পর ঘণ্টা কথা বলছিলাম? আমি পুরোটা সময় বোকার মতো স্ক্রিনের দিকে তাকিয়ে হাসছিলাম।",
-    emoji: "📱",
-    colorClass: "bg-yellow" 
-  },
-  {
-    text: "আগে আমি ঘণ্টায় একবার ফোন চেক করতাম। আর এখন? আমার স্ক্রিন টাইম আমাকে জাজ করছে রীতিমতো!",
-    emoji: "⏳",
-    colorClass: "bg-blue"
-  },
-  {
-    text: "তোমার টেক্সট মিস করার কোনো অলিম্পিক গেম থাকলে, আমি নিশ্চিত গোল্ড মেডেল পেতাম।",
-    emoji: "🥇",
-    colorClass: "bg-pink"
-  },
-  {
-    text: "তুমি ছবি দেওয়া বন্ধ করে দিয়েছো ঠিকই, কিন্তু তোমার ওই হাসিটা আমার কল্পনায় আরও বেশি স্পষ্ট হয়ে উঠেছে। Plot twist, right?",
-    emoji: "🙈",
-    colorClass: "bg-green"
-  }
-])
 
 const goNext = () => {
   // আগে এখানে '/diary' ছিল, এখন '/open-when' হবে
@@ -111,10 +90,37 @@ const goNext = () => {
 }
 
 /* Sticky Note Colors (Pastel) */
-.bg-yellow { background-color: #fff9c4 !important; }
-.bg-blue { background-color: #e3f2fd !important; }
-.bg-pink { background-color: #fce4ec !important; }
-.bg-green { background-color: #e8f5e9 !important; }
+/* Smile Corner Sticky Notes Colors */
+
+.bg-yellow { 
+  background-color: #fff9c4 !important; 
+  color: #827717 !important; /* গাঢ় হলুদ-সবুজ টেক্সট */
+}
+
+.bg-blue { 
+  background-color: #e3f2fd !important; 
+  color: #1565c0 !important; /* গাঢ় নীল টেক্সট */
+}
+
+.bg-pink { 
+  background-color: #fce4ec !important; 
+  color: #880e4f !important; /* গাঢ় ম্যাজেন্টা/পিংক টেক্সট */
+}
+
+.bg-green { 
+  background-color: #e8f5e9 !important; 
+  color: #1b5e20 !important; /* গাঢ় সবুজ টেক্সট */
+}
+
+.bg-peach { 
+  background-color: #ffedd5 !important;
+  color: #7c2d12 !important; /* গাঢ় খয়েরি টেক্সট */
+}
+
+.bg-rose { 
+  background-color: #ffe4e6 !important;
+  color: #881337 !important; /* গাঢ় ওয়াইন রেড টেক্সট */
+}
 
 .sticky-note {
   border-radius: 15px;

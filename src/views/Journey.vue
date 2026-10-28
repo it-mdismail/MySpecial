@@ -10,10 +10,10 @@
     <!-- টাইমলাইন সেকশন -->
     <div class="container timeline-container">
       
-      <!-- Vue 'v-for' লুপ দিয়ে টাইমলাইন ইভেন্টগুলো দেখানো হচ্ছে -->
+      <!-- Vue 'v-for' লুপ দিয়ে টাইমলাইন ইভেন্টগুলো দেখানো হচ্ছে -->
       <div 
         v-for="(event, index) in timelineEvents" 
-        :key="index" 
+        :key="event.id" 
         class="timeline-item fade-in-up"
         :style="{ animationDelay: `${index * 0.3}s` }"
       >
@@ -40,27 +40,9 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { timelineEvents } from '../data/db.js' 
 
 const router = useRouter()
-
-// এখানে তুমি তোমার নিজের মতো করে ইভেন্টগুলো লিখে নিবে
-const timelineEvents = ref([
-  {
-    date: 'The Beginning',
-    title: 'The First Message',
-    description: 'That unexpected moment when everything started. A simple conversation that changed my days.'
-  },
-  {
-    date: 'A Special Day',
-    title: 'Our First Meet',
-    description: 'Seeing you in person was different. I realized there is so much more to you than just words on a screen.'
-  },
-  {
-    date: 'The Shift',
-    title: 'Falling Deeper',
-    description: 'When you started hiding yourself and sharing less, I found myself looking for you even more. The silence made me realize how much I care.'
-  }
-])
 
 const goNext = () => {
   // বাটনে ক্লিক করলে নেক্সট পেজ (Smile Corner) এ যাবে
@@ -76,7 +58,6 @@ const goNext = () => {
   font-family: 'Nunito', sans-serif;
 }
 
-
 /* Timeline Custom CSS */
 .timeline-container {
   position: relative;
@@ -85,7 +66,6 @@ const goNext = () => {
   padding-left: 20px;
 }
 
-/* টাইমলাইনের লম্বা দাগটা */
 .timeline-container::before {
   content: '';
   position: absolute;
@@ -101,7 +81,6 @@ const goNext = () => {
   margin-bottom: 20px;
 }
 
-/* টাইমলাইনের গোল ডটগুলো */
 .timeline-dot {
   position: absolute;
   left: -2px; 
@@ -134,25 +113,9 @@ const goNext = () => {
 }
 
 /* Animations */
-.fade-in {
-  animation: fadeIn 1s ease-in forwards;
-}
+.fade-in { animation: fadeIn 1s ease-in forwards; opacity: 0; }
+.fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s ease-out forwards; }
 
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 </style>
