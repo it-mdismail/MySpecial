@@ -34,7 +34,7 @@
       </div>
 
       <!-- নেক্সট পেজে যাওয়ার বাটন -->
-      <button @click="goToJourney" class="btn btn-lg rounded-pill px-5 py-3 mb-5 shadow-sm custom-btn">
+      <button @click="goToJourney" class="btn btn-lg rounded-pill px-5 py-2 mb-5 shadow-sm custom-btn">
         Begin the Journey <span class="ms-2">&rarr;</span>
       </button>
     </div>
