@@ -1,10 +1,9 @@
 <template>
-  <div class="welcome-wrapper d-flex justify-content-center align-items-center vh-100 w-100 text-center px-3">
+  <div class="welcome-wrapper d-flex justify-content-center text-center px-3">
     
     <div class="welcome-content fade-in-up">
-      <!-- আইকন বা ছোট ছবি (Bootstrap Icon বা ইমোজি) -->
-      <div class="container d-flex justify-content-center">
-        <div class="img-container rounded-circle overflow-hidden w-50">
+      <div class="d-flex justify-content-center mt-2">
+        <div class="rounded-circle overflow-hidden w-50">
           <img src="/assets/img/tofa-1.jpg" alt="MyHeart" class="img-thumbnail">
         </div>
       </div>
@@ -55,11 +54,6 @@ const goToJourney = () => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@300;400;600&display=swap');
-.img-container{
-  margin-top: 300px;
-}
-
 .welcome-content{
   max-width:600px;
 }
