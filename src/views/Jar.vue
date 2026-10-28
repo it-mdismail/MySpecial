@@ -88,8 +88,10 @@ const goNext = () => {
 }
 
 .max-width-container { max-width: 600px; margin: 0 auto; }
-.custom-heading { font-family: 'Caveat', cursive; color: #5d4037; }
-.custom-handwriting { font-family: 'Caveat', cursive; font-size: 1.8rem; line-height: 1.4; color: #4e342e; }
+.custom-handwriting { 
+  font-size: 1.8rem; 
+  line-height: 1.4;
+}
 
 /* CSS Magic Jar */
 .magic-jar {
@@ -142,12 +144,6 @@ const goNext = () => {
 
 .close-btn { font-size: 1.5rem; cursor: pointer; color: #a1887f; line-height: 1; }
 .close-btn:hover { color: #5d4037; }
-
-/* Button & Animations */
-.custom-btn {
-  background-color: #fff; color: #6d4c41; border: 1px solid #d7ccc8; font-weight: 600; transition: all 0.3s ease;
-}
-.custom-btn:hover { background-color: #d7ccc8; color: #fff; transform: translateY(-3px); }
 
 /* Shake Animation */
 .shake-jar { animation: shake 0.4s 2; }

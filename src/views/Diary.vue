@@ -131,7 +131,6 @@ const goNext = () => {
 }
 
 .max-width-container { max-width: 750px; margin: 0 auto; }
-.custom-heading { font-family: 'Caveat', cursive; color: #6d4c41; }
 
 .letter-card {
   background-color: #faf9f6;
@@ -148,10 +147,25 @@ const goNext = () => {
   background: linear-gradient(90deg, #d7ccc8, #a1887f);
 }
 
-.custom-handwriting { font-family: 'Caveat', cursive; font-size: 2rem; color: #5d4037; }
-.letter-text { font-size: 1.1rem; line-height: 1.8; color: #4e342e; text-align: justify; min-height: 25px; }
-.blinking-cursor { font-weight: bold; color: #a1887f; animation: blink 1s step-end infinite; }
-.sign-off { font-size: 1.8rem; color: #795548; }
+.custom-handwriting { 
+  font-size: 2rem;
+}
+
+.letter-text { 
+  font-size: 1.1rem; 
+  line-height: 1.8; 
+  color: #4e342e; 
+  text-align: justify; 
+  min-height: 25px;
+ }
+.blinking-cursor { 
+  font-weight: bold; 
+  animation: blink 1s step-end infinite; 
+}
+.sign-off { 
+  font-size: 1.8rem; 
+  color: #795548; 
+}
 
 .quiz-btn {
   background-color: #fff9c4;

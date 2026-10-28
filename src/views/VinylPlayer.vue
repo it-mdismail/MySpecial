@@ -78,8 +78,6 @@ const goHome = () => {
 }
 
 .max-width-container { max-width: 600px; margin: 0 auto; }
-.custom-heading { font-family: 'Caveat', cursive; color: #5d4037; }
-.custom-handwriting { font-family: 'Caveat', cursive; font-size: 1.5rem; color: #4e342e; }
 
 /* Vinyl Record CSS */
 .vinyl-container {
@@ -148,10 +146,6 @@ const goHome = () => {
 }
 .play-btn:hover { background-color: #4e342e; transform: translateY(-2px); }
 
-.custom-btn {
-  background-color: transparent; color: #6d4c41; border: 1px solid #d7ccc8; font-weight: 600; transition: all 0.3s ease;
-}
-.custom-btn:hover { background-color: #d7ccc8; color: #fff; transform: translateY(-3px); }
 
 /* Animations */
 .fade-in { animation: fadeIn 1s ease-in forwards; opacity: 0; }

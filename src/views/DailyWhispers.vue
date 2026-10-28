@@ -63,11 +63,6 @@ const goNext = () => {
   margin: 0 auto;
 }
 
-.custom-heading {
-  font-family: 'Caveat', cursive;
-  color: #6d4c41;
-}
-
 /* Note Colors */
 .bg-yellow { background-color: #fff9c4 !important; }
 .bg-blue { background-color: #e3f2fd !important; }
@@ -93,20 +88,6 @@ const goNext = () => {
   color: #8d6e63 !important;
   border-top: 1px dashed rgba(0,0,0,0.1);
   padding-top: 10px;
-}
-
-.custom-btn {
-  background-color: #fff;
-  color: #6d4c41;
-  border: 1px solid #d7ccc8;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.custom-btn:hover {
-  background-color: #d7ccc8;
-  color: #fff;
-  transform: translateY(-3px);
 }
 
 .fade-in { animation: fadeIn 1s ease-in forwards; opacity: 0; }

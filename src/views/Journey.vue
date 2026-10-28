@@ -76,10 +76,6 @@ const goNext = () => {
   font-family: 'Nunito', sans-serif;
 }
 
-.custom-heading {
-  font-family: 'Caveat', cursive;
-  color: #6d4c41;
-}
 
 /* Timeline Custom CSS */
 .timeline-container {
@@ -135,20 +131,6 @@ const goNext = () => {
   color: #a1887f; 
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.custom-btn {
-  background-color: #fff;
-  color: #6d4c41;
-  border: 1px solid #d7ccc8;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.custom-btn:hover {
-  background-color: #d7ccc8;
-  color: #fff;
-  transform: translateY(-3px);
 }
 
 /* Animations */

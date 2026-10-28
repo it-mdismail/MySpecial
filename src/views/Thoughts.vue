@@ -71,7 +71,6 @@ const goNext = () => {
 }
 
 .max-width-container { max-width: 850px; margin: 0 auto; }
-.custom-heading { font-family: 'Caveat', cursive; color: #5d4037; }
 
 /* কার্ড এবং আইকন স্টাইল */
 .icon-circle {
@@ -123,12 +122,6 @@ const goNext = () => {
   z-index: 0;
   user-select: none;
 }
-
-/* Button & Animations */
-.custom-btn {
-  background-color: #fff; color: #6d4c41; border: 1px solid #d7ccc8; font-weight: 600; transition: all 0.3s ease;
-}
-.custom-btn:hover { background-color: #d7ccc8; color: #fff; transform: translateY(-3px); }
 
 .fade-in { animation: fadeIn 1s ease-in forwards; opacity: 0; }
 .fade-in-up { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease-out forwards; }

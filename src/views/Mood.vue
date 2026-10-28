@@ -66,7 +66,6 @@ const goNext = () => {
 }
 
 .max-width-container { max-width: 800px; margin: 0 auto; }
-.custom-heading { font-family: 'Caveat', cursive; color: #5d4037; }
 
 /* Mood Buttons */
 .mood-btn {
@@ -90,12 +89,6 @@ const goNext = () => {
   border-radius: 20px;
   transition: transform 0.3s ease;
 }
-
-/* Button & Animations */
-.custom-btn {
-  background-color: transparent; color: #6d4c41; border: 1px solid #d7ccc8; font-weight: 600; transition: all 0.3s ease;
-}
-.custom-btn:hover { background-color: #d7ccc8; color: #fff; transform: translateY(-3px); }
 
 /* Vue Transition CSS */
 .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease, transform 0.5s ease; }

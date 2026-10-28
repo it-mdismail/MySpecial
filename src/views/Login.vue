@@ -78,14 +78,4 @@ const checkPassword = () => {
   font-family: 'Caveat', cursive;
   color: #5d4037;
 }
-
-.custom-btn {
-  background-color: #d7ccc8;
-  color: #5d4037;
-  transition: all 0.3s ease;
-}
-
-.custom-btn:hover {
-  background-color: #bcaaa4;
-}
 </style>

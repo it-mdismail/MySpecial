@@ -66,7 +66,6 @@ const goNext = () => {
 }
 
 .max-width-container { max-width: 900px; margin: 0 auto; position: relative; }
-.custom-heading { font-family: 'Caveat', cursive; color: #5d4037; }
 .custom-title { color: #6d4c41; font-weight: 700; }
 
 /* Timeline CSS Architecture */
@@ -124,12 +123,6 @@ const goNext = () => {
 /* ব্যাজ পজিশনিং */
 .left .timeline-badge { right: -25px; }
 .right .timeline-badge { left: -25px; }
-
-/* Button */
-.custom-btn {
-  background-color: #fff; color: #6d4c41; border: 1px solid #d7ccc8; font-weight: 600; transition: all 0.3s ease; position: relative; z-index: 5;
-}
-.custom-btn:hover { background-color: #d7ccc8; color: #fff; transform: translateY(-3px); }
 
 /* Animations */
 .fade-in { animation: fadeIn 1s ease-in forwards; opacity: 0; }

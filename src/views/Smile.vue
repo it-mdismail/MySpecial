@@ -68,25 +68,24 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const showTwist = ref(false) // টুইস্ট দেখানোর স্টেট
 
-// তোমার মজার কথা বা জোকসগুলো এখানে এডিট করবে
 const funnyNotes = ref([
   {
-    text: "Remember that day we talked about completely random things for hours? Yeah, I was smiling at my screen like an idiot.",
+    text: "মনে আছে সেদিন আমরা কীভাবে রেন্ডম টপিক নিয়ে ঘণ্টার পর ঘণ্টা কথা বলছিলাম? আমি পুরোটা সময় বোকার মতো স্ক্রিনের দিকে তাকিয়ে হাসছিলাম।",
     emoji: "📱",
-    colorClass: "bg-yellow" // স্টিকি নোটের কালার
+    colorClass: "bg-yellow" 
   },
   {
-    text: "You know what's funny? I used to check my phone once an hour. Now? My screen time is basically judging me.",
+    text: "আগে আমি ঘণ্টায় একবার ফোন চেক করতাম। আর এখন? আমার স্ক্রিন টাইম আমাকে জাজ করছে রীতিমতো!",
     emoji: "⏳",
     colorClass: "bg-blue"
   },
   {
-    text: "If missing your texts was an Olympic sport, I would definitely win a gold medal right now.",
+    text: "তোমার টেক্সট মিস করার কোনো অলিম্পিক গেম থাকলে, আমি নিশ্চিত গোল্ড মেডেল পেতাম।",
     emoji: "🥇",
     colorClass: "bg-pink"
   },
   {
-    text: "You hiding your pictures only made me imagine your smile more clearly. Plot twist, right?",
+    text: "তুমি ছবি দেওয়া বন্ধ করে দিয়েছো ঠিকই, কিন্তু তোমার ওই হাসিটা আমার কল্পনায় আরও বেশি স্পষ্ট হয়ে উঠেছে। Plot twist, right?",
     emoji: "🙈",
     colorClass: "bg-green"
   }
@@ -109,11 +108,6 @@ const goNext = () => {
 .max-width-container {
   max-width: 800px;
   margin: 0 auto;
-}
-
-.custom-heading {
-  font-family: 'Caveat', cursive;
-  color: #6d4c41;
 }
 
 /* Sticky Note Colors (Pastel) */
@@ -142,20 +136,6 @@ const goNext = () => {
   background: rgba(255, 255, 255, 0.8);
   border: 2px dashed #ffcdd2;
   backdrop-filter: blur(10px);
-}
-
-.custom-btn {
-  background-color: #fff;
-  color: #6d4c41;
-  border: 1px solid #d7ccc8;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.custom-btn:hover {
-  background-color: #d7ccc8;
-  color: #fff;
-  transform: translateY(-3px);
 }
 
 /* Animations */

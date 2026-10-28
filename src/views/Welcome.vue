@@ -41,24 +41,7 @@ const goToJourney = () => {
   font-family: 'Nunito', sans-serif;
 }
 
-.custom-heading {
-  font-family: 'Caveat', cursive;
-  color: #6d4c41; /* Soft brown */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-}
-
-.custom-btn {
-  background-color: #fff;
-  color: #6d4c41;
-  border: 1px solid #d7ccc8;
-  transition: all 0.4s ease;
-  font-weight: 600;
-}
-
 .custom-btn:hover {
-  background-color: #d7ccc8;
-  color: #fff;
-  transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(109, 76, 65, 0.15) !important;
 }
 
