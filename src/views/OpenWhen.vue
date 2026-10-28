@@ -272,7 +272,7 @@ const goNext = () => {
 /* খাম খোলার পর যা হবে (When is-open class is active) */
 .is-open .env-top {
   transform: rotateX(180deg);
-  z-index: 1; /* ঢাকনা পেছনে চলে যাবে */
+  z-index: 1;
   transition: transform 0.4s ease, z-index 0s 0.2s;
 }
 

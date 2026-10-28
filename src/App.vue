@@ -38,5 +38,6 @@ import Fireflies from './components/Fireflies.vue'
 
 .custom-handwriting {
   color: #800020 !important;
+  font-family: 'Caveat', cursive;
 }
 </style>
