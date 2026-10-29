@@ -7,11 +7,11 @@
     </div>
 
     <div class="container">
-      <div class="row g-4 justify-content-center">
+      <div class="row g-0 justify-content-center">
         
         <!-- এনভেলপগুলো লুপ করে দেখানো হচ্ছে -->
         <div 
-          class="col-lg-4 col-md-6 mb-5 fade-in-up" 
+          class="col-lg-4 col-md-6 mb-2 fade-in-up" 
           v-for="(envelope, index) in envelopes" 
           :key="index"
           :style="{ animationDelay: `${index * 0.2}s` }"
