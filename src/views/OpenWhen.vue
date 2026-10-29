@@ -194,7 +194,7 @@ const goNext = () => {
 .envelope {
   position: relative;
   width: 320px;
-  height: 220px;
+  height: 180px;
   background: #f5f5f5;
   transition: transform 0.4s ease;
 }
