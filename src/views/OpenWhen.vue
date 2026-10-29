@@ -193,8 +193,8 @@ const goNext = () => {
 
 .envelope {
   position: relative;
-  width: 280px;
-  height: 180px;
+  width: 320px;
+  height: 220px;
   background: #f5f5f5;
   transition: transform 0.4s ease;
 }
