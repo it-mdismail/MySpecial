@@ -33,7 +33,7 @@
               </div>
               
               <!-- ছবির পেছনের দিক (Back) -->
-              <div class="polaroid-back d-flex justify-content-center align-items-center p-4">
+              <div class="polaroid-back d-flex justify-content-center align-items-center p-1">
                 <p class="custom-handwriting text-center mb-0 text-dark">
                   "{{ photo.note }}"
                 </p>
@@ -81,7 +81,7 @@ const goNext = () => {
 
 .max-width-container { max-width: 1100px; margin: 0 auto; }
 .custom-handwriting { 
-  font-size: 1.8rem; 
+  font-size: 1.2rem; 
   line-height: 1.4; 
 }
 
@@ -118,7 +118,7 @@ const goNext = () => {
   backface-visibility: hidden; /* পেছনের দিকটা লুকিয়ে রাখার জন্য */
   background: #fff;
   border-radius: 8px;
-  padding: 15px 15px 20px 15px;
+  padding: 10px;
   border: 1px solid #eee;
 }
 
@@ -138,7 +138,7 @@ const goNext = () => {
 .polaroid-back {
   transform: rotateY(180deg);
   background: #faf9f6;
-  background-image: repeating-linear-gradient(transparent, transparent 29px, #e0e0e0 30px); /* ডায়েরির পাতার মতো লাইন */
+  background-image: repeating-linear-gradient(transparent, transparent 29px, #e0e0e0 30px);
 }
 
 

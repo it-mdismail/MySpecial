@@ -250,44 +250,100 @@ export const dailyWhispers = [
 export const polaroidGallery = [
   {
     id: 1,
-    image: "/img-1.avif",
+    image: "/assets/img/tofa.jpeg",
     title: "Simple",
     date: "A day to remember",
-    note: "এই হাসিতেই তো আমি আটকে গেছি...",
+    note: "এই হাসিতেই তো আমি আটকে গেছি",
     rotateClass: "rotate-left"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80",
+    image: "/assets/img/tofa-10.jpeg",
     title: "The Silent Beauty",
     date: "Special moment",
     note: "যখন তুমি চুপ করে থাকো, তখনও তোমার চোখ অনেক কথা বলে।",
-    rotateClass: "rotate-right"
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=80",
-    title: "Hidden Magic",
-    date: "My favorite",
-    note: "ছবি দেওয়া বন্ধ করে দিয়ে তুমি আমাকে আরও বেশি পাগল করে দিয়েছো!",
     rotateClass: "rotate-straight"
   },
   {
-    id: 1,
-    image: "/img-1.avif",
-    title: "Simple",
-    date: "A day to remember",
-    note: "এই হাসিতেই তো আমি আটকে গেছি...",
+    id: 3,
+    image: "/assets/img/tofa-8.jpeg",
+    title: "স্নিগ্ধতা 🌸",
+    date: "The beauty of simplicity",
+    note: "খুব সাধারণ সাজেও তোমাকে এতটা অসাধারণ লাগে! তোমার এই স্নিগ্ধ রূপটাই আমার সবচেয়ে প্রিয়, যেখানে কোনো কৃত্রিমতা নেই।",
+    rotateClass: "rotate-right"
+  },
+  {
+    id: 4,
+    image: "/assets/img/tofa-14.jpeg",
+    title: "মায়াবী আড়াল 🧕",
+    date: "Respect & Purity",
+    note: "নিজেকে দুনিয়ার কোলাহল থেকে আড়াল করে রাখার এই চেষ্টাটা তোমাকে আমার কাছে সবচেয়ে বেশি স্পেশাল করে তুলেছে। পর্দার আড়ালের এই 'তুমি'টা আমার ভীষণ আপন।",
     rotateClass: "rotate-left"
   },
   {
-    id: 1,
-    image: "/img-1.avif",
-    title: "Simple",
-    date: "A day to remember",
-    note: "এই হাসিতেই তো আমি আটকে গেছি...",
+    id: 5,
+    image: "/assets/img/tofa-17.jpeg",
+    title: "শাড়ির ভাঁজে মায়া ✨",
+    date: "The Bengali Beauty",
+    note: "শাড়িতে তোমাকে দেখলে চোখের পলক ফেলা দায়! মনে হয় যেন আমার আকাশের সবচেয়ে সুন্দর আর স্নিগ্ধ চাঁদটা মাটিতে নেমে এসেছে।",
+    rotateClass: "rotate-straight"
+  },
+  {
+    id: 6,
+    image: "/assets/img/tofa-18.jpeg",
+    title: "খাঁটি সৌন্দর্য 🌿",
+    date: "Flawless & Pure",
+    note: "কোনো মেকআপ ছাড়া তোমার যে খাঁটি আর নিষ্পাপ চেহারা, আমি সেটার প্রেমেই বারবার পড়ি। এটাই তো আমার আসল মানুষটা, যাকে আমি সারাজীবন দেখতে চাই।",
+    rotateClass: "rotate-right"
+  },
+  {
+    id: 7,
+    image: "/assets/img/tofa-21.jpeg",
+    title: "সেই মিষ্টি হাসি 😊",
+    date: "Captured perfection",
+    note: "তোমার সেলফিগুলো দেখলে মনে হয়, ক্যামেরাও বোধহয় তোমার এই মিষ্টি হাসির প্রেমে পড়ে গেছে! এই হাসিটাই তো আমার প্রতিদিনের বাঁচার আনন্দ।",
     rotateClass: "rotate-left"
   },
+  {
+    id: 8,
+    image: "/assets/img/tofa-6.jpeg",
+    title: "বউ বউ লুক",
+    date: "Cute but Bossy!",
+    note: "ছবিতে দেখতে একদম শান্ত-শিষ্ট লক্ষ্মী বউয়ের মতো লাগছে, কিন্তু আমাকে যে কী লেভেলের প্রেশারে রাখো, সেটা শুধু আমিই জানি! তবে সত্যি বলতে, তোমার এই মিষ্টি শাসনটুকু আমি সারাজীবন এভাবেই হাসিমুখে মাথা পেতে নিতে চাই।",
+    rotateClass: "rotate-straight"
+  },
+  {
+    id: 9,
+    image: "/assets/img/tofa-2.jpeg",
+    title: "ক্যাজুয়াল তুমি",
+    date: "Comfortably Cute",
+    note: "সবসময় তো মায়াবী রূপে দেখি, কিন্তু টি-শার্টে তোমার এই ক্যাজুয়াল আর কিউট লুকটাও আমাকে দারুণভাবে ঘায়েল করে! তুমি যে রূপেই থাকো, পারফেক্ট।",
+    rotateClass: "rotate-right"
+  },
+  {
+    id: 10,
+    image: "/assets/img/tofa-11.jpeg",
+    title: "ড্যাশিং লুক 😎",
+    date: "The Boss Lady Vibe",
+    note: "খোলা চুল আর কালো সানগ্লাস একদম 'বস লেডি' ভাইব! আমার ড্যাশিং পার্টনার!",
+    rotateClass: "rotate-left"
+  },
+  {
+    id: 11,
+    image: "/assets/img/tofa-20.jpeg",
+    title: "আমাদের ফ্রেম",
+    date: "The Best Day",
+    note: "একই ফ্রেমে আমরা দুজন! যদিও তোমার শহরে গুরে রোঁদে পুরে ছাই হয়ে গেছি তবুও এই ছবিটা শুধু একটা ছবি নয়, এটা আমার সারাজীবনের সবচেয়ে সুন্দর একটা স্মৃতির দলিল। আমাদের এই ফ্রেমটা এভাবেই অনন্তকাল থাকুক। ",
+    rotateClass: "rotate-straight"
+  },
+  {
+    id: 12,
+    image: "/assets/img/tofa-19.jpeg",
+    title: "তাসফিয়া ও আমরা",
+    date: "The unforgettable moments",
+    note: "ছবিতে তাসফিয়াকে নিয়ে আমরা তিনজন ঠিকই, কিন্তু আমার পুরো ফোকাস তো তোমার দিকেই ছিল! এই ছবিটা দেখলেই ওইদিনের সেই বুক ধুকপুক করা মুহূর্তগুলোর কথা মনে পড়ে যায়।",
+    rotateClass: "rotate-right"
+  }
 ];
 
 
