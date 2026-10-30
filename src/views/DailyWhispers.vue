@@ -64,10 +64,35 @@ const goNext = () => {
 }
 
 /* Note Colors */
-.bg-yellow { background-color: #fff9c4 !important; }
-.bg-blue { background-color: #e3f2fd !important; }
-.bg-pink { background-color: #fce4ec !important; }
-.bg-green { background-color: #e8f5e9 !important; }
+.bg-yellow { 
+  background-color: #fff9c4 !important; 
+  color: #827717 !important; /* গাঢ় হলুদ-সবুজ টেক্সট */
+}
+
+.bg-blue { 
+  background-color: #e3f2fd !important; 
+  color: #1565c0 !important; /* গাঢ় নীল টেক্সট */
+}
+
+.bg-pink { 
+  background-color: #fce4ec !important; 
+  color: #880e4f !important; /* গাঢ় ম্যাজেন্টা/পিংক টেক্সট */
+}
+
+.bg-green { 
+  background-color: #e8f5e9 !important; 
+  color: #1b5e20 !important; /* গাঢ় সবুজ টেক্সট */
+}
+
+.bg-peach { 
+  background-color: #ffedd5 !important;
+  color: #7c2d12 !important; /* গাঢ় খয়েরি টেক্সট */
+}
+
+.bg-rose { 
+  background-color: #ffe4e6 !important;
+  color: #881337 !important; /* গাঢ় ওয়াইন রেড টেক্সট */
+}
 
 .whisper-card {
   border-radius: 15px;

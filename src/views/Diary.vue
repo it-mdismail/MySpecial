@@ -41,25 +41,31 @@
     </div>
 
     <!-- কিউট পপ-আপ (Modal) -->
-    <div v-if="showModal" class="custom-modal-overlay">
-      <div class="custom-modal card border-0 shadow-lg p-4 text-center rounded-4 fade-in-up">
+    <div v-if="showModal" class="custom-modal-overlay" @click.self="closeModal">
+      <div class="custom-modal card border-0 shadow-lg p-4 text-center rounded-4 fade-in-up position-relative">
         
+        <!-- ক্লোজ বাটন -->
+        <button @click="closeModal" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
+
         <div v-if="!quizAnswered">
           <h3 class="custom-heading mb-3">Just wondering...</h3>
-          <p class="text-muted mb-4">আমাদের নেক্সট দেখায় কী খাওয়া উচিত?</p>
+          <p class="text-muted mb-4">আমাদের নেক্সট দেখায় কী খাওয়া উচিত?</p>
           
           <div class="d-flex flex-column gap-3">
-            <button @click="handleAnswer" class="btn btn-outline-secondary rounded-pill">কফি ☕</button>
-            <button @click="handleAnswer" class="btn btn-outline-secondary rounded-pill">আইসক্রিম 🍦</button>
-            <button @click="handleAnswer" class="btn btn-outline-secondary rounded-pill">তুমি যা বলবে 😊</button>
+            <button @click="handleAnswer('coffee')" class="btn outline-wine rounded-pill">কফি ☕</button>
+            <button @click="handleAnswer('mezban')" class="btn outline-wine rounded-pill">মেজবানের মাংস আর আখনি পোলাও 🍖</button>
+            <button @click="handleAnswer('icecream')" class="btn outline-wine rounded-pill">আইসক্রিম 🍦</button>
+            <button @click="handleAnswer('you')" class="btn outline-wine rounded-pill">তুমি যা বলবে 😊</button>
           </div>
         </div>
 
         <div v-else class="py-4">
           <h1 class="mb-3">❤️</h1>
           <h4 class="custom-heading">Noted!</h4>
-          <p class="text-muted">I'll be waiting for that day. <br> Take care.</p>
-          <button @click="goNext" class="btn btn-sm btn-light rounded-pill mt-3 px-4">
+          <!-- ডায়নামিক রিপ্লাই মেসেজ -->
+          <p class="text-muted mt-3 mb-4" style="line-height: 1.6;">{{ replyMessage }}</p>
+          
+          <button @click="goNext" class="btn rounded-pill px-4 py-2 shadow-sm custom-btn">
             See My Whispers &rarr;
           </button>
         </div>
@@ -88,9 +94,6 @@ const currentParaIndex = ref(0)
 const currentCharIndex = ref(0)
 const isTyping = ref(true)
 
-const showModal = ref(false)
-const quizAnswered = ref(false)
-
 const typeWriter = () => {
   if (currentParaIndex.value < paragraphs.length) {
     const currentText = paragraphs[currentParaIndex.value]
@@ -112,9 +115,38 @@ onMounted(() => {
   setTimeout(typeWriter, 1200) 
 })
 
-const handleAnswer = () => {
+const showModal = ref(false)
+const quizAnswered = ref(false)
+const replyMessage = ref('') // ডায়নামিক মেসেজ রাখার জন্য
+
+// অপশন অনুযায়ী আলাদা উত্তর সেট করার ফাংশন
+const handleAnswer = (choice) => {
   quizAnswered.value = true
+  
+  if (choice === 'coffee') {
+    replyMessage.value = "কফি আর সাথে তোমার গল্প! বিশ্বাস করো, এর চেয়ে সুন্দর আর স্নিগ্ধ সন্ধ্যা আমার কাছে আর কিছুই হতে পারে না। আমি সেই সন্ধ্যার অপেক্ষায় থাকলাম।"
+  } 
+  else if (choice === 'mezban') {
+    replyMessage.value = "আসল চাটগাঁইয়া চয়েস! মেজবানের স্বাদ আর তোমার ওই মিষ্টি হাসি দুটোই আমার ভীষণ প্রিয়। ডান! নেক্সট ডেটে এটাই হচ্ছে।"
+  } 
+  else if (choice === 'icecream') {
+    replyMessage.value = "ডান! তবে আইসক্রিমের চেয়ে তোমার ওই হাসিটা যে বেশি মিষ্টি হবে, সেটা আমি বাজি ধরে বলতে পারি।"
+  } 
+  else if (choice === 'you') {
+    replyMessage.value = "তাহলে আমি এমন একটা জায়গা খুঁজবো, যেখানে চারপাশটা শান্ত থাকবে, আর আমাদের জমানো না-বলা কথাগুলো ডানা মেলবে। আমি সেই দিনটার অপেক্ষায় থাকবো।"
+  }
 }
+
+// মোডাল ক্লোজ করার ফাংশন
+const closeModal = () => {
+  showModal.value = false
+  // তুমি চাইলে পপ-আপ ক্লোজ করলে আবার রিসেট করে দিতে পারো
+  setTimeout(() => {
+    quizAnswered.value = false
+    replyMessage.value = ''
+  }, 300)
+}
+
 
 const goNext = () => {
   showModal.value = false
@@ -174,7 +206,10 @@ const goNext = () => {
   font-weight: 600;
   transition: all 0.3s ease;
 }
-.quiz-btn:hover { background-color: #fff59d; transform: scale(1.05); }
+.quiz-btn:hover { 
+  background-color: #fff59d; 
+  transform: scale(1.05); 
+}
 
 /* Modal Styles */
 .custom-modal-overlay {
@@ -182,13 +217,49 @@ const goNext = () => {
   top: 0; left: 0; width: 100vw; height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
-  display: flex; justify-content: center; align-items: center;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
   z-index: 10000;
 }
 
-.custom-modal { width: 90%; max-width: 400px; background: #fff; }
-.custom-modal .btn { transition: all 0.3s ease; border-color: #d7ccc8; color: #5d4037; }
-.custom-modal .btn:hover { background: #d7ccc8; color: #fff; }
+/* আউটলাইন ওয়াইন রেড বাটন */
+.outline-wine {
+  color: #722F37;
+  border: 2px solid #722F37;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.outline-wine:hover {
+  background-color: #722F37;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(114, 47, 55, 0.2);
+}
+
+.custom-modal {
+  width: 90%;
+  max-width: 400px;
+  background: #fdfbfb;
+}
+
+.btn-close {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.btn-close:hover {
+  opacity: 1;
+}
+.custom-modal .btn { 
+  transition: all 0.3s ease; 
+  border-color: #d7ccc8; 
+  color: #5d4037; 
+}
+.custom-modal .btn:hover { 
+  color: #fff; }
 
 /* Animations */
 .fade-in { animation: fadeIn 1.2s ease-in forwards; opacity: 0; }

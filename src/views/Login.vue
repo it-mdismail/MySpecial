@@ -44,7 +44,7 @@ const error = ref(false)
 const router = useRouter()
 
 // তোমার সিক্রেট পিন (যেমন: 1234)
-const SECRET_PIN = '1234' 
+const SECRET_PIN = '786' 
 
 const checkPassword = () => {
   if (password.value === SECRET_PIN) {
