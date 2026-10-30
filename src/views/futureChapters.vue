@@ -1,26 +1,26 @@
 <template>
   <div class="future-wrapper py-5 px-3 min-vh-100">
     
-    <div class="container text-center mb-5 pb-3 fade-in">
-      <h2 class="custom-heading display-4 fw-bold">The Future Chapters..⏳</h2>
+    <div class="container text-center mb-1 pb-3 fade-in">
+      <h2 class="custom-heading display-4 fw-bold">The Future Chapters..</h2>
       <p class="text-muted">A timeline of the little moments awaiting us...</p>
     </div>
 
-    <div class="container max-width-container">
+    <div class="container p-0 max-width-container">
       
-      <div class="timeline">
+      <div class="future">
         <!-- লুপ করে টাইমলাইনের আইটেমগুলো দেখানো হচ্ছে -->
         <div 
           v-for="(future, index) in futures" 
           :key="future.id"
-          class="timeline-item fade-in-up"
+          class="future-item fade-in-up"
           :class="{ 'left': index % 2 === 0, 'right': index % 2 !== 0 }"
           :style="{ animationDelay: `${index * 0.3}s` }"
         >
-          <div class="timeline-content shadow-sm p-4 rounded-4 bg-white position-relative">
+          <div class="future-content shadow-sm p-4 rounded-4 bg-white position-relative">
             
-            <!-- মাঝখানের আইকন/ডট -->
-            <div class="timeline-badge shadow-sm d-flex justify-content-center align-items-center">
+            <!-- মাঝখানের আইকন/ডট ব্যাজ -->
+            <div class="future-badge shadow-sm d-flex justify-content-center align-items-center">
               <span class="fs-4">{{ future.icon }}</span>
             </div>
 
@@ -51,7 +51,7 @@ const router = useRouter()
 const futures = ref(futureChapters)
 
 const goNext = () => {
-  // নেক্সট পেজ (Mood Enhancer) এ যাওয়ার জন্য
+  // নেক্সট পেজ (Mood Enhancer) এ যাওয়ার জন্য
   router.push('/mood')
 }
 </script>
@@ -65,20 +65,28 @@ const goNext = () => {
   overflow-x: hidden;
 }
 
-.max-width-container { max-width: 900px; margin: 0 auto; position: relative; }
-.custom-title { color: #6d4c41; font-weight: 700; }
+.max-width-container { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  position: relative; 
+}
 
-/* Timeline CSS Architecture */
-.timeline {
+.custom-title { 
+  color: #722F37; 
+  font-weight: 700; 
+}
+
+/* future CSS Architecture */
+.future {
   position: relative;
   margin: 0 auto;
 }
 
-/* মাঝখানের লম্বা লাইনটা */
-.timeline::after {
+/* ডেস্কটপের জন্য মাঝখানের লম্বা লাইনটা */
+.future::after {
   content: '';
   position: absolute;
-  width: 4px;
+  width: 2px;
   background-color: #d7ccc8;
   top: 0;
   bottom: 0;
@@ -87,42 +95,42 @@ const goNext = () => {
   border-radius: 5px;
 }
 
-.timeline-item {
-  padding: 10px 40px;
+.future-item {
+  padding: 15px 40px;
   position: relative;
   background-color: inherit;
   width: 50%;
 }
 
-/* জোড় আইটেম বামে, বিজোড় আইটেম ডানে */
+/* জোড় আইটেম বামে, বিজোড় আইটেম ডানে (ডেস্কটপের জন্য) */
 .left { left: 0; }
 .right { left: 50%; }
 
-.timeline-content {
-  border: 1px solid #f5f5f5;
+.future-content {
+  border: 1px solid #722F37;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-item:hover .timeline-content {
+.future-item:hover .future-content {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
 }
 
-/* মাঝখানের গোল আইকন ব্যাজ */
-.timeline-badge {
+/* গোল আইকন ব্যাজ */
+.future-badge {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background-color: #fff;
-  border: 3px solid #bcaaa4;
+  border: 3px solid #722F37;
   border-radius: 50%;
   top: 20px;
   z-index: 1;
 }
 
-/* ব্যাজ পজিশনিং */
-.left .timeline-badge { right: -25px; }
-.right .timeline-badge { left: -25px; }
+/* ডেস্কটপে ব্যাজ পজিশনিং */
+.left .future-badge { right: -22.5px; }
+.right .future-badge { left: -22.5px; }
 
 /* Animations */
 .fade-in { animation: fadeIn 1s ease-in forwards; opacity: 0; }
@@ -131,12 +139,49 @@ const goNext = () => {
 @keyframes fadeIn { to { opacity: 1; } }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-/* Mobile Responsive */
+/* =========================================
+   Mobile Responsive (The Magic Happens Here)
+   ========================================= */
 @media screen and (max-width: 768px) {
-  .timeline::after { left: 31px; }
-  .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-  .left { left: 0; }
-  .right { left: 0; }
-  .left .timeline-badge, .right .timeline-badge { left: 6px; right: auto; }
+  /* মোবাইলে মাঝখানের গ্লোবাল লাইনটা হাইড করে দেবো */
+  .future::after { 
+    display: none; 
+  }
+  
+  /* কার্ডগুলো ফুল উইডথ (১০০%) নেবে */
+  .future-item { 
+    width: 100%; 
+    padding: 15px 0px; 
+  }
+  
+  .left, .right { 
+    left: 0; 
+  }
+
+  /* -------------------------------------
+     জোড় আইটেম (Left) - বর্ডার ও ব্যাজ থাকবে ডানে
+     ------------------------------------- */
+  .left .future-content {
+    border-right: 4px solid #722F37; /* ডান পাশে টাইমলাইন বর্ডার */
+    border-left: 1px solid #f5f5f5;
+    margin-right: 15px; /* ব্যাজের জন্য একটু জায়গা ছাড়বে */
+  }
+  .left .future-badge {
+    right: -24px; /* ব্যাজটা ডান দিকের বর্ডারের ঠিক ওপরে বসবে */
+    left: auto;
+  }
+
+  /* -------------------------------------
+     বিজোড় আইটেম (Right) - বর্ডার ও ব্যাজ থাকবে বাঁয়ে
+     ------------------------------------- */
+  .right .future-content {
+    border-left: 4px solid #722F37; /* বাঁ পাশে টাইমলাইন বর্ডার */
+    border-right: 1px solid #f5f5f5;
+    margin-left: 15px; /* ব্যাজের জন্য একটু জায়গা ছাড়বে */
+  }
+  .right .future-badge {
+    left: -24px; /* ব্যাজটা বাঁ দিকের বর্ডারের ঠিক ওপরে বসবে */
+    right: auto;
+  }
 }
 </style>
