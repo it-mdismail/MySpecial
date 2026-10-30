@@ -39,7 +39,7 @@
       <!-- নেক্সট পেজ বাটন -->
       <div class="text-center mt-5 pt-4 fade-in" style="animation-delay: 1.2s;">
         <button @click="goNext" class="btn rounded-pill px-5 py-3 shadow-sm custom-btn">
-          Next: The Memory Lane &rarr;
+          Next: The Future Chapters &rarr;
         </button>
       </div>
 
@@ -57,7 +57,7 @@ const thoughts = ref(myThoughts)
 
 const goNext = () => {
   // নেক্সট পেজ (Memory Lane) এ যাওয়ার জন্য
-  router.push('/memory-lane')
+  router.push('/future-chapters')
 }
 </script>
 

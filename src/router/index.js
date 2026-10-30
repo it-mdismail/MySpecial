@@ -50,9 +50,9 @@ const router = createRouter({
       component: () => import('../views/Thoughts.vue')
     },
     {
-      path: '/memory-lane',
-      name: 'memoryLane',
-      component: () => import('../views/MemoryLane.vue')
+      path: '/future-chapters',
+      name: 'futureChapters',
+      component: () => import('../views/futureChapters.vue')
     },
     {
       path: '/mood',

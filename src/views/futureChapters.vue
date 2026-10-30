@@ -1,9 +1,9 @@
 <template>
-  <div class="memory-wrapper py-5 px-3 min-vh-100">
+  <div class="future-wrapper py-5 px-3 min-vh-100">
     
     <div class="container text-center mb-5 pb-3 fade-in">
-      <h2 class="custom-heading display-4 fw-bold">The Memory Lane ⏳</h2>
-      <p class="text-muted">A timeline of our little unforgettable moments...</p>
+      <h2 class="custom-heading display-4 fw-bold">The Future Chapters..⏳</h2>
+      <p class="text-muted">A timeline of the little moments awaiting us...</p>
     </div>
 
     <div class="container max-width-container">
@@ -11,8 +11,8 @@
       <div class="timeline">
         <!-- লুপ করে টাইমলাইনের আইটেমগুলো দেখানো হচ্ছে -->
         <div 
-          v-for="(memory, index) in memories" 
-          :key="memory.id"
+          v-for="(future, index) in futures" 
+          :key="future.id"
           class="timeline-item fade-in-up"
           :class="{ 'left': index % 2 === 0, 'right': index % 2 !== 0 }"
           :style="{ animationDelay: `${index * 0.3}s` }"
@@ -21,12 +21,12 @@
             
             <!-- মাঝখানের আইকন/ডট -->
             <div class="timeline-badge shadow-sm d-flex justify-content-center align-items-center">
-              <span class="fs-4">{{ memory.icon }}</span>
+              <span class="fs-4">{{ future.icon }}</span>
             </div>
 
-            <span class="text-muted fw-bold small d-block mb-2">{{ memory.date }}</span>
-            <h4 class="custom-title mb-3">{{ memory.title }}</h4>
-            <p class="text-dark mb-0">{{ memory.description }}</p>
+            <span class="text-muted fw-bold small d-block mb-2">{{ future.date }}</span>
+            <h4 class="custom-title mb-3">{{ future.title }}</h4>
+            <p class="text-dark mb-0">{{ future.description }}</p>
           </div>
         </div>
       </div>
@@ -45,10 +45,10 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { memoryLane } from '../data/db.js'
+import { futureChapters } from '../data/db.js'
 
 const router = useRouter()
-const memories = ref(memoryLane)
+const futures = ref(futureChapters)
 
 const goNext = () => {
   // নেক্সট পেজ (Mood Enhancer) এ যাওয়ার জন্য
@@ -59,7 +59,7 @@ const goNext = () => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;600;700&display=swap');
 
-.memory-wrapper {
+.future-wrapper {
   background: #fdfbfb;
   font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
