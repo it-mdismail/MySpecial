@@ -39,7 +39,7 @@
       <!-- নেক্সট পেজ বাটন -->
       <div class="text-center mt-5 pt-4 fade-in" style="animation-delay: 1s;">
         <button @click="goNext" class="btn rounded-pill px-5 py-3 shadow-sm custom-btn">
-          Next: Song of Our Week &rarr;
+          Next: voice notes  &rarr;
         </button>
       </div>
 
@@ -74,7 +74,7 @@ const pickRandomReason = () => {
 
 const goNext = () => {
   // নেক্সট পেজ (Song of Our Week) এ যাওয়ার জন্য
-  router.push('/vinyl')
+  router.push('/voice-notes')
 }
 </script>
 

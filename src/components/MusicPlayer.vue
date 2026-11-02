@@ -13,7 +13,7 @@
     
     <!-- অডিও ট্যাগ, যা ব্যাকগ্রাউন্ডে কাজ করবে। loop দেওয়া আছে যাতে শেষ হলে আবার বাজে -->
     <audio ref="audioRef" loop>
-      <source src="/music.mp3" type="audio/mpeg" />
+      <source src="/assets/audio/dire-cholo.mp3" type="audio/mpeg" />
     </audio>
   </div>
 </template>

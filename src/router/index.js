@@ -80,7 +80,13 @@ const routes = [
     name: 'vinyl',
     component: () => import('../views/VinylPlayer.vue'),
     meta: { requiresAuth: true }
-  }
+  },
+  {
+    path: '/voice-notes',
+    name: 'voiceNotes',
+    component: () => import('../views/VoiceNotes.vue'),
+    meta: { requiresAuth: true }
+  },
 ]
 
 const router = createRouter({

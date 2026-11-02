@@ -607,11 +607,36 @@ export const jarReasons = [
 ];
 
 
+
+export const voiceNotes = [
+  {
+    id: 1,
+    title: "প্রথম কথা বলার সেই দিন 📞",
+    date: "July 25, 2026",
+    audioSrc: "/audio/first-call.mp3",
+    description: "আমাদের প্রথমবার ফোনে কথা বলা। দুজনেরই একটু নার্ভাসনেস, একটু জড়তা, আর অনেকখানি মুগ্ধতা।"
+  },
+  {
+    id: 2,
+    title: "ওহ মেরা নাবী হ্যায়",
+    date: "August 10, 2026",
+    audioSrc: "/assets/audio/mera-naby.mp3",
+    description: "তোমার কণ্ঠে গাওয়া আমার সবচেয়ে প্রিয় নাত। যখনই মন খারাপ থাকে, আমি চোখ বন্ধ করে এটা শুনি।"
+  },
+  {
+    id: 3,
+    title: "ধীরে চলো ও নদী",
+    date: "September 05, 2026",
+    audioSrc: "/assets/audio/dire-cholo.mp3",
+    description: "হঠাৎ করে কোনো একটা জোকসে তোমার সেই প্রাণখোলা হাসি। এই শব্দটা আমার সারাদিনের ক্লান্তি দূর করে দেয়।"
+  },
+];
+
 // সং অফ দ্য উইক (Song of the Week) ডেটা
 export const songOfWeek = {
   title: "Perfect", // তোমার পছন্দের গানের নাম দিতে পারো
   artist: "Ed Sheeran", // শিল্পীর নাম
   cover: "https://images.unsplash.com/photo-1493225457124-a1a2a5956093?auto=format&fit=crop&w=500&q=80",
-  audio: "/weekly-song.mpeg", // গানটির অডিও ফাইল
+  audio: "/assets/audio/sokhi.mp3",
   note: "এই সপ্তাহের জন্য এই গানটা। যখনই মন খারাপ হবে, চোখ বন্ধ করে এটা শুনবে আর ভাববে আমি তোমার পাশেই আছি..."
 };
