@@ -7,12 +7,10 @@
     </div>
 
     <!-- ম্যাজিক জার সেকশন -->
-    <div class="magic-container position-relative d-flex flex-column align-items-center">
-      
-      <!-- মডার্ন কিউরিওসিটি ব্যাজ -->
+    <div class="magic-container position-relative d-flex flex-column align-items-center mt-2"> 
       <div v-if="!currentReason && !isShaking" class="modern-hint-box">
         <div class="hint-content shadow-sm">
-          <span class="hint-text">Psst... tap to open! ✨</span>
+          <span class="hint-text">Psst... tap to open!</span>
         </div>
         <div class="down-arrow">👇</div>
       </div>
@@ -56,13 +54,13 @@
     </div>
 
      <!-- কিউরিওসিটি টেক্সট (Curiosity Text) -->
-    <div class="curiosity-section mt-5 fade-in text-center" style="animation-delay: 0.5s;">
+    <div class="curiosity-section mt-2 fade-in text-center" style="animation-delay: 0.5s;">
       <h3 class="curiosity-heading mb-1">Want to know a secret? 🤫</h3>
       <p class="curiosity-subtext">Tap the jar to see what my heart wants to tell you...</p>
     </div>
 
     <!-- নেক্সট পেজ বাটন -->
-    <div class="text-center mt-5 pt-4 fade-in" style="animation-delay: 1s;">
+    <div class="text-center my-5 pt-4 fade-in" style="animation-delay: 1s;">
       <button @click="goNext" class="btn rounded-pill px-5 py-3 shadow-sm custom-btn">
         Next: Voice Notes &rarr;
       </button>
