@@ -619,14 +619,14 @@ export const voiceNotes = [
   {
     id: 2,
     title: "ওহ মেরা নাবী হ্যায়",
-    date: "August 10, 2026",
+    date: "October 23, 2026",
     audioSrc: "/assets/audio/mera-naby.mp3",
     description: "তোমার কণ্ঠে গাওয়া আমার সবচেয়ে প্রিয় নাত। যখনই মন খারাপ থাকে, আমি চোখ বন্ধ করে এটা শুনি।"
   },
   {
     id: 3,
     title: "ধীরে চলো ও নদী",
-    date: "September 05, 2026",
+    date: "October 30, 2026",
     audioSrc: "/assets/audio/dire-cholo.mp3",
     description: "তোমার কণ্ঠে যখন গানটি শুনি, তখন মনে হয় যদি কোনোদিন তুমি আমাকে গভীরভাবে অনুভব করে, আমাকে তোমার হৃদয়ে ধারণ করে গানটি গাইতে, তবে আমি সবকিছু ফেলে তোমার কাছে ছুটে যেতাম।"
   },
