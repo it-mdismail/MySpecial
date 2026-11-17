@@ -18,7 +18,7 @@
         >
           <div class="card h-100 border-0 shadow-sm whisper-card" :class="whisper.color">
             <div class="card-body p-4 d-flex flex-column justify-content-between">
-              <p class="whisper-text fw-semibold text-dark mb-4">"{{ whisper.text }}"</p>
+              <p class="whisper-text fw-semibold mb-4">"{{ whisper.text }}"</p>
               <span class="whisper-date text-muted small text-end d-block fw-bold">{{ whisper.date }}</span>
             </div>
           </div>
@@ -89,9 +89,9 @@ const goNext = () => {
   color: #7c2d12 !important; /* গাঢ় খয়েরি টেক্সট */
 }
 
-.bg-rose { 
-  background-color: #ffe4e6 !important;
-  color: #881337 !important; /* গাঢ় ওয়াইন রেড টেক্সট */
+.bg-PowderBlue { 
+  background-color: #B0E0E6 !important;
+  color: #00008B !important; /* গাঢ় ওয়াইন রেড টেক্সট */
 }
 
 .whisper-card {
