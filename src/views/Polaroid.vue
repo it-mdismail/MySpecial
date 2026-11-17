@@ -26,7 +26,7 @@
                 <div class="image-box">
                   <img :src="photo.image" :alt="photo.title" class="img-fluid" />
                 </div>
-                <div class="polaroid-caption mt-3 text-center">
+                <div class="polaroid-caption my-3 text-center">
                   <h5 class="fw-bold mb-0 custom-font text-dark">{{ photo.title }}</h5>
                   <small class="text-muted">{{ photo.date }}</small>
                 </div>
@@ -124,7 +124,7 @@ const goNext = () => {
 
 .image-box {
   width: 100%;
-  height: 230px;
+  height: 260px;
   overflow: hidden;
   background: #f5f5f5;
 }
