@@ -8,32 +8,35 @@
     </div>
 
     <div class="container max-width-container">
-      <div class="row justify-content-center g-5">
+      
+      <!-- মডার্ন Masonry গ্রিড লেআউট -->
+      <div class="masonry-grid">
         
-        <!-- লুপ করে ছবিগুলো দেখানো হচ্ছে -->
+        <!-- বাইরের ডিভ: এটা শুধু Masonry ব্রেকিং আর ফেড-ইন অ্যানিমেশন কন্ট্রোল করবে -->
         <div 
           v-for="(photo, index) in photos" 
           :key="photo.id" 
-          class="col-md-6 col-lg-4 d-flex justify-content-center fade-in-up"
-          :style="{ animationDelay: `${index * 0.2}s` }"
+          class="masonry-item fade-in-up"
+          :style="{ animationDelay: `${index * 0.15}s` }"
         >
-          <!-- 3D ফ্লিপ কন্টেইনার -->
+          <!-- ভেতরের ডিভ: এটা 3D ফ্লিপ আর তোমার সেই বাঁকা (Tilted) রোটেশন ধরে রাখবে -->
           <div class="polaroid-container" :class="photo.rotateClass">
-            <div class="polaroid-card shadow-lg">
+            <div class="polaroid-card shadow-sm">
               
               <!-- ছবির সামনের দিক (Front) -->
               <div class="polaroid-front">
                 <div class="image-box">
-                  <img :src="photo.image" :alt="photo.title" class="img-fluid" />
+                  <!-- ছবি এখন আর কাটবে না, অরিজিনাল রেশিও নেবে -->
+                  <img :src="photo.image" :alt="photo.title" class="custom-img" />
                 </div>
-                <div class="polaroid-caption my-3 text-center">
-                  <h5 class="fw-bold mb-0 custom-font text-dark">{{ photo.title }}</h5>
+                <div class="polaroid-caption mt-3 mb-1 text-center">
+                  <h5 class="fw-bold mb-0 custom-title text-dark">{{ photo.title }}</h5>
                   <small class="text-muted">{{ photo.date }}</small>
                 </div>
               </div>
               
               <!-- ছবির পেছনের দিক (Back) -->
-              <div class="polaroid-back d-flex justify-content-center align-items-center p-1">
+              <div class="polaroid-back d-flex justify-content-center align-items-center p-4">
                 <p class="custom-handwriting text-center mb-0 text-dark">
                   "{{ photo.note }}"
                 </p>
@@ -65,7 +68,6 @@ const router = useRouter()
 const photos = ref(polaroidGallery)
 
 const goNext = () => {
-  // নেক্সট পেজ (Through My Eyes) এ যাওয়ার জন্য
   router.push('/thoughts')
 }
 </script>
@@ -80,71 +82,95 @@ const goNext = () => {
 }
 
 .max-width-container { max-width: 1100px; margin: 0 auto; }
+.custom-title { font-family: 'Nunito', sans-serif; }
+
 .custom-handwriting { 
-  font-size: 1.2rem; 
+  font-family: 'Caveat',
+  cursive; font-size: 1.5rem; 
   line-height: 1.4; 
+  color: #5d4037 !important;}
+
+.masonry-grid {
+  column-count: 1;
+  column-gap: 2rem;
 }
 
-/* 3D Flip Card CSS */
+@media (min-width: 768px) {
+  .masonry-grid { column-count: 2; }
+}
+
+@media (min-width: 992px) {
+  .masonry-grid { column-count: 3; }
+}
+
+.masonry-item {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+}
+
 .polaroid-container {
-  perspective: 1000px; /* 3D স্পেস তৈরি করা হলো */
-  width: 280px;
-  height: 340px;
+  perspective: 1000px;
+  width: 100%;
   cursor: pointer;
+  transition: transform 0.3s ease; 
 }
 
-/* পোলারয়েড ছড়ানো ছিটানো দেখানোর জন্য ক্লাসেস */
 .rotate-left { transform: rotate(-4deg); }
 .rotate-right { transform: rotate(5deg); }
 .rotate-straight { transform: rotate(-1deg); }
 
 .polaroid-card {
+  display: grid;
   width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* বাউন্সি ফ্লিপ ইফেক্ট */
   transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* হোভার করলে কার্ডটা ১৮০ ডিগ্রি ঘুরে যাবে */
 .polaroid-container:hover .polaroid-card {
   transform: rotateY(180deg) scale(1.05);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+  background-color: #5d4037;
 }
 
+
 .polaroid-front, .polaroid-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* পেছনের দিকটা লুকিয়ে রাখার জন্য */
+  grid-area: 1 / 1; 
+  backface-visibility: hidden; 
   background: #fff;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 10px;
-  border: 1px solid #eee;
+  border: 1px solid #e0e0e0;
 }
+
 
 .image-box {
   width: 100%;
-  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  background: #f5f5f5;
 }
 
-.image-box img {
+.custom-img {
   width: 100%;
-  height: 100%;
+  height: auto; 
+  max-height: 380px;
   object-fit: cover;
+  object-position: top;
+  display: block; 
 }
+
 
 .polaroid-back {
   transform: rotateY(180deg);
-  background: #faf9f6;
-  background-image: repeating-linear-gradient(transparent, transparent 29px, #e0e0e0 30px);
+  background: #fffdf2;
+  background-image: repeating-linear-gradient(transparent, transparent 29px, #f0eaea 30px);
 }
-
 
 .fade-in { animation: fadeIn 1s ease-in forwards; opacity: 0; }
 .fade-in-up { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease-out forwards; }
-
 @keyframes fadeIn { to { opacity: 1; } }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 </style>
